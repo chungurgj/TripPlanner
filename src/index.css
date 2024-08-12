@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+  *{
+    font-family: 'Trip Sans', sans-serif;
+    font-style: medium;
+  }
+}
+
+@layer components{
+  .nav-group li{
+    @apply hover:bg-gray-200 px-3 py-2 rounded-full cursor-pointer;
+  }
+  .hero-component{
+    @apply py-3 px-1 hover:cursor-pointer;
+  }
+  .hero-active-component{
+    border-bottom: 3px solid black;
+  }
+  .input-container{
+    @apply flex md:border border-2 p-2 rounded-xl md:rounded-full shadow-md justify-between items-center flex-col
+    md:flex-row md:gap-0 gap-3;
+  }
+  .input-container input:focus{
+    outline: none;
+    border: 0px ;
+  }
+  .landscape {
+    @apply min-h-[450px] w-[70%] bg-green-600 text-white rounded-xl;
+    background-image: url('./img/landscape1.jpg'); 
+    background-size: cover;
+    background-position: bottom;
+
+}
+.hero-small-image, .activity-image{
+  @apply min-h-[250px] rounded-xl text-white flex justify-start items-end text-2xl
+   font-semibold p-4;
+   background-size: cover;
+   background-position: center;
+}
+.hero-small-image:nth-child(1){
+  background-image: url('./img/small1.jpg');
+}
+.hero-small-image:nth-child(2){
+  background-image: url('./img/small2.webp');
+}
+.hero-small-image:nth-child(3){
+  background-image: url('./img/small3.jpg');
+}
+.hero-small-image:nth-child(4){
+  background-image: url('./img/small4.jpg');
+}
+.explore{
+  @apply min-h-[250px]  rounded-xl w-full;
+  background-size: cover;
+  background-position: center;
+}
+.destination{
+  @apply col-span-1 w-full h-[250px] rounded-xl bg-cover text-3xl font-semibold text-white flex justify-start items-end p-3;
+  background-position: center;
+}
+.destination:nth-child(1){
+  background-image: url('./img/destination1.jpg');
+}
+.destination:nth-child(2){
+  background-image: url('./img/destination2.avif');
+}
+.destination:nth-child(3){
+  background-image: url('./img/destination3.webp');
+}
+.destination:nth-child(4){
+  background-image: url('./img/destination4.jpg');
+}
+.travel-active{
+  
+  border-bottom: 3px solid black ;
+}
+.footer-group ul{
+  @apply px-5 py-2  w-full ;
+}
+.footer-last-group li{
+  @apply underline flex-nowrap ;
+}
+.navbar-input{
+  @apply w-[80%] lg:w-[28%];
+  
+}
+.travelersChoiceImg{
+
+    width: clamp(300px,35%,500px);
+
+  
+}
+.hero-group{
+  width: clamp(250px,90%,900px);
+}
+
+}
+
+@layer utilities{
+  .heart-favorited {
+    filter: invert(28%) sepia(89%) saturate(7448%) hue-rotate(350deg) brightness(100%) contrast(110%);
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+  -ms-overflow-style: none;  /* Hide scrollbar in Internet Explorer and Edge */
+}
+
+.overflow-x-auto::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Chrome, Safari, and Opera */
+}
+}
