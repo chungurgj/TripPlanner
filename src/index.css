@@ -97,6 +97,9 @@
   width: clamp(250px,90%,900px);
 }
 
+.ff li{
+  cursor: pointer;
+}
 }
 
 @layer utilities{
