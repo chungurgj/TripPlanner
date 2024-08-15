@@ -28,7 +28,7 @@
     border: 0px ;
   }
   .landscape {
-    @apply min-h-[450px] w-[70%] bg-green-600 text-white rounded-xl;
+    @apply min-h-[450px] w-[85%] sm:w-[70%] bg-green-600 text-white rounded-xl;
     background-image: url('./img/landscape1.jpg'); 
     background-size: cover;
     background-position: bottom;

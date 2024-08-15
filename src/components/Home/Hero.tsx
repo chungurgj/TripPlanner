@@ -7,10 +7,10 @@ const Hero = () => {
     const [activeItem, setActiveItem] = useState<number>(0)
 
     return (
-        <div className='flex flex-col justify-evenly items-center gap-24 min-h-[2050px] py-10 md:py-24'>
-            <div className="flex flex-col justify-between items-center min-h-[230px] w-full">
+        <div className='flex flex-col justify-evenly items-center gap-10 md:gap-24 min-h-[2050px] py-10 md:py-24'>
+            <div className="flex flex-col justify-between items-center min-h-[230px]  w-full">
                 <h1 className='text-5xl font-bold md:block hidden'>Where to?</h1>
-                <div className="flex flex-col gap-5 hero-group">
+                <div className="flex flex-col gap-5 hero-group ">
                     <div className="overflow-x-auto w-full">
                         <ul className='flex gap-8 w-max'>
                             {items.map((item, index) => (
@@ -40,7 +40,7 @@ const Hero = () => {
                 </div>
                 <button className="bg-white px-5 py-2 text-black rounded-full">Enter now</button>
             </div>
-            <div className="flex flex-col w-[70%] gap-5">
+            <div className="flex flex-col w-[85%] sm:w-[70%] gap-5">
                 <div className="flex flex-col justify-center items-start">
                     <h3 className="text-xl font-semibold">Go on an award-winning adventure</h3>
                     <p>2024’s Travelers’ Choice Awards Best of the Best Things To Do</p>

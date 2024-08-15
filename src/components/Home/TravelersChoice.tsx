@@ -3,18 +3,6 @@ import Logo from '../../img/logo.png'
 
 const TravelersChoice = () => {
   return (
-    // <div className='lg:min-h-[600px] bg-travelersChoice w-full p-24 gap-10 md:gap-0 flex flex-col md:flex-row travelersChoice justify-start items-center  sm:items-start '>
-     
-    //     <div className='flex flex-col gap-3 justify-start items-start '>
-    //         <img src={Logo} className='w-24 h-24' />
-    //         <h1 className='font-ultra text-5xl'>Travelers' Choice<br/> Awards Best of <br/>the Best</h1>
-    //         <p className='text-lg'>Among our top 1% of places, stays,<br/> eats, and experiences—decided by<br/> you.</p>
-    //         <button className='px-4 py-3 text-white bg-black rounded-full'>See the winners</button>
-            
-    //     </div>
-    //     <img src={Image} className='hidden md:flex travelersChoiceImg rounded-xl ' />
- 
-    // </div>
 
     <div className='bg-travelersChoice w-full min-h-[600px] grid grid-cols-1 md:grid-cols-2'>
 
