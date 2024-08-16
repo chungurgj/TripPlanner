@@ -3,10 +3,13 @@ import Logo from '../img/logo.png'
 import Search from '../img/search.png'
 import Menu from '../img/menu.png'
 import User from '../img/user.png'
+import NavbarProfileContainer from './NavbarProfileContainer'
 
 const Navbar = () => {
   const [scrolled,setScrolled] = useState(false)
   const [changeNavbar,setChangeNavbar] = useState(false)
+  const [profileVisible,setProfileVisible] = useState(false)
+  const [timeoutId, setTimeoutId] = useState<number | null>(null)
 
   useEffect(()=>{
     const handleScroll = () =>{
@@ -28,6 +31,21 @@ const Navbar = () => {
     };
   },[])
 
+  const handleMouseEnter = () =>{
+    if(timeoutId)
+      clearInterval(timeoutId)
+
+    setProfileVisible(true)
+  }
+
+  const handleMouseLeave = () =>{
+    const id = setTimeout(()=>{
+      setProfileVisible(false)
+    },200)
+
+    setTimeoutId(id as unknown as number)
+  }
+
   return (
     <nav className={`bg-white ${scrolled ? 'border-b-[1px]' : ''} flex flex-col justify-center items-center py-3   sticky top-0 z-10`}>
       <div className='navbar-content w-full flex flex-col gap-4 sm:w-4/5 2xl:w-3/5'>
@@ -46,16 +64,23 @@ const Navbar = () => {
           <img src={Search} className='h-4 w-4' />
           <input type="text" placeholder='Search' className='w-full' />
         </div> : <></>}
-        <img src={User} className='h-6 w-6  md:hidden inline' />
+        <div className='relative md:hidden'>
+          <img src={User} className='h-6 w-6 inline' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}/>
+          <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>{profileVisible && <NavbarProfileContainer/>}</div>
+        </div>
+
         <ul className='lg:flex hidden nav-group'>
              <li>Discover</li>
              <li>Trips</li>
              <li>Review</li>
              <li>More</li>
          </ul>
-         <div className='md:flex justify-center items-center gap-5 hidden'>
-          <span className='bg-black text-white px-3 py-2  rounded-full hover:cursor-pointer whitespace-nowrap'>Sign up</span>
+         <div className='md:flex justify-center items-center gap-5 hidden relative'>
+          <span className='bg-black text-white px-3 py-2  rounded-full hover:cursor-pointer whitespace-nowrap'
+          onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>Sign up</span>
+          <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>{profileVisible && <NavbarProfileContainer/>}</div>
          </div>
+        
       </div>
       {changeNavbar ? <ul className={`lg:flex gap-4 hidden`}>
         <li>Hotels</li>
@@ -68,6 +93,7 @@ const Navbar = () => {
         <li>Forums</li>
       </ul> : <></>}
       </div>
+      
     </nav>
   )
 }
