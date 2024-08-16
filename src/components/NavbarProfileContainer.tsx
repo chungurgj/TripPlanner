@@ -1,11 +1,6 @@
-import { useState } from "react"
 
-interface NavbarProfileContainerProps {
 
-}
-
-const NavbarProfileContainer : React.FC<NavbarProfileContainerProps> = ({}) => {
-  const [open,setOpen] = useState(false)
+const NavbarProfileContainer  = () => {
 
   return (
     <div className='min-h-[270px] w-[220px]  bg-gray-100 shadow-lg absolute top-[110%] right-0 p-6 rounded-xl flex justify-center items-center h-full'>
